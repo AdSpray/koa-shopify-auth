@@ -39,15 +39,13 @@ export default function createShopifyAuth(options: OAuthStartOptions) {
   };
 
   const {prefix} = config;
-  const {siteId} = config;
 
   const oAuthStartPath = `${prefix}/auth`;
   const oAuthCallbackPath = `${oAuthStartPath}/callback`;
 
   const inlineOAuthPath = `${prefix}/auth/inline`;
   const topLevelOAuthRedirect = createTopLevelOAuthRedirect(
-    Shopify.Context.API_KEY,
-      siteId + inlineOAuthPath,
+    Shopify.Context.API_KEY, inlineOAuthPath
   );
 
   const enableCookiesPath = `${oAuthStartPath}/enable_cookies`;

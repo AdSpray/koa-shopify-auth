@@ -16,7 +16,7 @@ const BODY =
 const ACTION = 'Continue';
 
 export default function createRequestStorageAccess({
-  prefix,
+  prefix,siteId
 }: OAuthStartOptions) {
   return function requestStorage(ctx: Context) {
     const {query} = ctx;
@@ -43,7 +43,7 @@ export default function createRequestStorageAccess({
     window.shopOrigin = "https://${encodeURIComponent(shop)}";
     ${itpHelper}
     ${storageAccessHelper}
-    ${requestStorageAccess(shop, prefix)}
+    ${requestStorageAccess(shop, prefix, siteId)}
   </script>
 </head>
 <body>
