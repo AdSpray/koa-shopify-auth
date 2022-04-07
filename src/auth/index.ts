@@ -45,10 +45,11 @@ export default function createShopifyAuth(options: OAuthStartOptions) {
   const oAuthStartPath = `${prefix}/auth`;
   const oAuthCallbackPath = `${oAuthStartPath}/callback`;
 
-  const inlineOAuthPath = `${prefix}${siteId}/auth/inline`;
+  const inlineOAuthPath = `${prefix}/auth/inline`;
+  const redirectInlineOAuthPath = `${siteId}${prefix}/auth/inline`;
   const topLevelOAuthRedirect = createTopLevelOAuthRedirect(
     Shopify.Context.API_KEY,
-    inlineOAuthPath,
+    redirectInlineOAuthPath,
   );
 
   const enableCookiesPath = `${oAuthStartPath}/enable_cookies`;
