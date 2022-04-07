@@ -1,6 +1,6 @@
 {
   "name": "@adabra/koa-shopify-auth",
-  "version": "5.0.3",
+  "version": "6.0.0",
   "license": "MIT",
   "description": "Middleware to authenticate a Koa application with Shopify",
   "main": "dist/src/index.js",
@@ -9,9 +9,9 @@
     "build": "tsc",
     "lint": "eslint",
     "prepare": "husky install",
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "npm run build",
     "test": "jest",
-    "preversion": "yarn test",
+    "preversion": "npm test",
     "postversion": "git push origin master --follow-tags && echo \"Log in to shipit to deploy version $npm_package_version\""
   },
   "publishConfig": {
